@@ -7,7 +7,7 @@ class RecipeEntry
     end
 
     def render_all
-      client.entries(content_type: content_type_id, select: ["fields.title"])
+      client.entries(content_type: content_type_id, select: ["fields.title", "fields.photo"])
     end
   end
 end

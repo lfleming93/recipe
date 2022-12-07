@@ -1,0 +1,26 @@
+<div class="container mt-4">
+  <%= link_to 'Go back', recipe_entries_path %>
+
+  <h1> <%= @resource.title %> </h1>
+  <% if @resource.chef.present? %>
+    <h3>By: <%= @resource.chef.name %></h3>
+  <% end %>
+  <div class="row">
+    <% if @resource.photo.present? %>
+      <div class="col">
+        <%= image_tag @resource.photo.image_url(w: 300), alt: @resource.photo.title %>
+      </div>
+    <% end %>
+    <div class="col">
+        <%= markdown @resource.description %>
+    </div>
+  </div>
+  <% if @resource.tags.present? %>
+    <div class="row mt-2">
+      <span>
+        <strong>Tags: </strong>
+        <%= @resource.tags.map(&:name).join(', ') %>
+      </span>
+    </div>
+  <% end %>
+</div>

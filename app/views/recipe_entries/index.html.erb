@@ -1,0 +1,29 @@
+<div class="container mt-4">
+  <div class="col">
+    <h1> Recipes </h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Name</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @resources.each do |resource| %>
+          <tr>
+            <td>
+              <% if resource.photo.present? %>
+                <%= image_tag resource.photo.image_url(w: 140), alt: resource.photo.title %>
+              <% end %>
+            </td>
+            <td> <%= resource.title %></td>
+
+            <td> <%= link_to 'Details', recipe_entry_path(resource.id) %>
+          </tr>
+        <% end %>
+      </tbody>
+
+    </table>
+</div>
