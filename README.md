@@ -1,24 +1,11 @@
-# README
+# Marley Spoon recipes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple web application taht consumes recipes from Contentful
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Configuration
+    $ git clone git@github.com:lfleming93/recipe.git
+    $ cd recipe
+    $ bundle install
+    $ echo '67556ca4683ee61dd65e0896941255ee' > config/master.key
+    $ rails db:create
+    $ rails s
